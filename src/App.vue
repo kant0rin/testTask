@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-container>
+      <v-app-bar
+          color="#BDBDBD"
+          dense
+          dark
+          class="d-flex justify-center"
+      >
+        <v-btn class="mr-5"><router-link to="/" style="text-decoration: none; color: white">Order Book</router-link></v-btn>
+        <v-btn><router-link to="/chosing" style="text-decoration: none; color: white">Symbols</router-link></v-btn>
+      </v-app-bar>
+    </v-container>
+    <router-view/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+
+  },
+
+  data(){
+    return {
+      items: ['Ask', 'Bids']
+    }
+  },
+
+  created() {
+
+  }
+};
+</script>
